@@ -1,10 +1,9 @@
 const express = require("express")
 const app = express()
-const port = 5500
+const port = 3000
 
-app.get("/", (req, res)=> {
-    res.send("hello world")
-})
+app.use("/", require("./routes/index"))
 
 app.listen(process.env.port || port)
-console.log(`Listening on port ${process.env.port}`)
+console.log(`Listening on port ${port}`)
+
